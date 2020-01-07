@@ -12,6 +12,11 @@ hostip: localhost
 server:
   port: 9903
 spring:
+  rabbitmq:
+    host: 47.101.11.64
+    port: 5672
+    username: admin
+    password: admin
   kafka:
     bootstrap-servers: 47.101.11.64:9093
     producer:
