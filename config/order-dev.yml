@@ -1,5 +1,13 @@
 data:
  test: hahahahah
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 hostip: localhost
 server:
   port: 9903
