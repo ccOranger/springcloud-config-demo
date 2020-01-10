@@ -1,10 +1,21 @@
 #当前服务ip
 hostip: 192.168.10.14
-data:
-  test: 12312312312
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 server:
   port: 9908
 spring:
+  rabbitmq:
+    host: 47.101.11.64
+    port: 5672
+    username: admin
+    password: admin
   kafka:
     bootstrap-servers: 47.101.11.64:9093
     producer:
