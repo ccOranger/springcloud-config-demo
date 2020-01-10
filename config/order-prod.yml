@@ -86,6 +86,6 @@ exception:
 logging:
   #控制台日志输出级别,这里设置的级别，控制xml文件中console控制台的输出，不设置默认info
   level:
-    com.rayeye.insurance.order: debug
+    com.rayeye.insurance.order: info
   #配置日志输出
   config: classpath:log4j2-prod.xml
