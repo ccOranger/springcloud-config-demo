@@ -81,10 +81,10 @@ exception:
     enable: true
     emil: licc@rayeye.cn
 
-# 打印日志uat
+# 打印日志prod
 logging:
   #控制台日志输出级别,这里设置的级别，控制xml文件中console控制台的输出，不设置默认info
   level:
     com.rayeye.insurance.order: trace
   #配置日志输出
-  config: classpath:log4j2-uat.xml
+  config: classpath:log4j2-prod.xml
