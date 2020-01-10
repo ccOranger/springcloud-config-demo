@@ -1,7 +1,7 @@
 #当前服务ip
 hostip: 192.168.10.193
 data:
-  test: 123123123sss12
+  test: 123123123sss1211
 server:
   port: 9903
 spring:
