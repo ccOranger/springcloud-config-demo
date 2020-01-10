@@ -1,22 +1,10 @@
+#当前服务ip
+hostip: 192.168.10.193
 data:
- test: fdddsdfsdfsdfsdf1111
-management:
-  endpoint:
-    shutdown:
-      enabled: false
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-hostip: localhost
+  test: 123123123sss12
 server:
   port: 9903
 spring:
-  rabbitmq:
-    host: 47.101.11.64
-    port: 5672
-    username: admin
-    password: admin
   kafka:
     bootstrap-servers: 47.101.11.64:9093
     producer:
@@ -32,7 +20,7 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
   datasource:
-    url: jdbc:mysql://localhost:3306/db_insurance?useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT
+    url: jdbc:mysql://192.168.10.193:3306/db_insurance?useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
@@ -57,9 +45,10 @@ eureka:
     prefer-ip-address: true
     ip-address: ${hostip}
     instance-id: ${hostip}:${server.port}
+    hostname: 192.168.10.193
   client:
     serviceUrl:
-      defaultZone: http://localhost:9901/eureka/
+      defaultZone: http://${eureka.instance.hostname}:9901/eureka/
 
 
 #开启feign支持hystrix  (注意，一定要开启，旧版本默认支持，新版本默认关闭)
@@ -81,6 +70,7 @@ exception:
     enable: true
     emil: licc@rayeye.cn
 
+
 # 打印日志
 logging:
   #控制台日志输出级别,这里设置的级别，控制xml文件中console控制台的输出，不设置默认info
@@ -88,5 +78,3 @@ logging:
     com.rayeye.insurance.order: trace
   #配置日志输出
   config: classpath:log4j2-dev.xml
-
-
